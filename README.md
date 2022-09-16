@@ -10,6 +10,7 @@
     <li><code>cp .env.example .env</code></li>
     <li>No arquivo .env que acabou de criar edite:
     <ul>
+        <li><code>DB_HOST=mysql</code></li>
         <li><code>DB_USERNAME=sail</code></li>
         <li><code>DB_PASSWORD=password</code></li>
         <li>Em <code>FEEGOW_TOKEN=</code> insira seu token para API FEEGOW</li>
