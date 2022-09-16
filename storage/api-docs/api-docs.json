@@ -1,0 +1,184 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Documentação do teste para Feegow",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/professional/list/{especialidade_id}": {
+            "get": {
+                "tags": [
+                    "Profissionais"
+                ],
+                "summary": "Carrega profissionais por especialidade",
+                "description": "Carrega profissionais por especialidade",
+                "operationId": "53c98dd999e277368dd62f4a961f1f97",
+                "parameters": [
+                    {
+                        "name": "especialidade_id",
+                        "in": "path",
+                        "description": "inserir especialidade_id",
+                        "required": true,
+                        "example": 263
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/prospection/new": {
+            "post": {
+                "tags": [
+                    "Prospect"
+                ],
+                "summary": "Cadastra prospect",
+                "description": "Cadastra prospect  - IMPORTANTE tenha certeza que cadastrou ao menos uma cateoria de source",
+                "operationId": "Cadastra prospect",
+                "requestBody": {
+                    "description": "Cadastra prospecrt",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "specialty_id",
+                                    "professional_id",
+                                    "name",
+                                    "cpf",
+                                    "source_id",
+                                    "birthdate"
+                                ],
+                                "properties": {
+                                    "specialty_id": {
+                                        "type": "integer",
+                                        "example": 263
+                                    },
+                                    "professional_id": {
+                                        "type": "integer",
+                                        "example": 263
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Marcos Silva"
+                                    },
+                                    "cpf": {
+                                        "type": "string",
+                                        "example": "548.584.551-89"
+                                    },
+                                    "source_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "birthdate": {
+                                        "type": "string",
+                                        "example": "2001-05-20"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Source cadastrado com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Source cadastrado com sucesso"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/source/index": {
+            "get": {
+                "tags": [
+                    "Sources"
+                ],
+                "summary": "Carrega sources",
+                "description": "Carrega sources",
+                "operationId": "cc474cdb03c4a77f8d4f06bb6d20ff1b",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/source/new": {
+            "post": {
+                "tags": [
+                    "Sources"
+                ],
+                "summary": "Cadastra source",
+                "description": "Cadastra source",
+                "operationId": "Cadastra source",
+                "requestBody": {
+                    "description": "Cadastra source",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "source"
+                                ],
+                                "properties": {
+                                    "source": {
+                                        "type": "string",
+                                        "example": "Internet"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Source cadastrado com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Source cadastrado com sucesso"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/specialists/list": {
+            "get": {
+                "tags": [
+                    "Especialidades"
+                ],
+                "summary": "Carrega especialidades",
+                "description": "Carrega especialidades",
+                "operationId": "d0aa83ddfe60e7f23f8f5a66ce459015",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    }
+}
