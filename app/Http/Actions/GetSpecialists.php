@@ -9,6 +9,11 @@ class GetSpecialists
     private $uri;
     private $headers;
 
+    /**
+     * __construct
+     *
+     * @return void
+     */
     public function __construct()
     {
         $this->uri = 'https://api.feegow.com/v1/api/specialties/list';
@@ -20,6 +25,11 @@ class GetSpecialists
         );
     }
 
+    /**
+     * execute
+     *
+     * @return array
+     */
     public function execute(): array
     {
         $client = new Client();

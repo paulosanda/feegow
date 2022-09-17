@@ -9,6 +9,11 @@ class GetProfessionals
     private $uri;
     private $headers;
 
+    /**
+     * __construct
+     *
+     * @return void
+     */
     public function __construct()
     {
         $this->uri = 'https://api.feegow.com/v1/api/professional/list';
@@ -20,6 +25,12 @@ class GetProfessionals
         );
     }
 
+    /**
+     * execute
+     *
+     * @param  mixed $data
+     * @return array
+     */
     public function execute($data): array
     {
         $query = '?especialidade_id=' . $data;
