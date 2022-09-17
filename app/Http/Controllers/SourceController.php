@@ -29,7 +29,7 @@ class SourceController extends Controller
     {
         $sources = Source::all();
         $sources = empty($sources[0]->id) ? ["Não há sources cadastrado"] : $sources;
-        // dd(count($sources));
+
         return response()->json([$sources], 200);
     }
 
