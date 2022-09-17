@@ -23,7 +23,7 @@ class SourceController extends Controller
      *
      * index
      *
-     * @return void
+     * @return mixed
      */
     public function index()
     {
@@ -63,7 +63,7 @@ class SourceController extends Controller
      * store
      *
      * @param  mixed $request
-     * @return void
+     * @return mixed
      */
     public function store(Request $request)
     {
