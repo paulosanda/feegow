@@ -36,6 +36,10 @@ class ProspectionController extends Controller
      *     )
      * )
      *
+     * store
+     *
+     * @param  mixed $request
+     * @return mixed
      */
     public function store(Request $request)
     {
