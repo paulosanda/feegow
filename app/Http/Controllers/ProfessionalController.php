@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Actions\GetProfessionals;
 
 class ProfessionalController extends Controller
@@ -31,7 +30,7 @@ class ProfessionalController extends Controller
      * getlist
      *
      * @param  mixed $especialidade_id
-     * @return void
+     * @return mixed
      */
     public function getlist($especialidade_id)
     {
