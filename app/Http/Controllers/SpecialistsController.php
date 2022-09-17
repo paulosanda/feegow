@@ -22,7 +22,7 @@ class SpecialistsController extends Controller
      *
      * getlist
      *
-     * @return void
+     * @return mixed
      */
     public function getlist()
     {
