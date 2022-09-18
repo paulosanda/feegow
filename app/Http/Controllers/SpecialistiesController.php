@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Actions\GetSpecialists;
+use App\Http\Actions\Specialisties;
 
-class SpecialistsController extends Controller
+class SpecialistiesController extends Controller
 {
     /**
      * Carrega especialidades
      * @OA\Get(
      *  tags={"Especialidades"},
      *  description="Carrega especialidades",
-     *  path="/api/specialists/list",
+     *  path="/api/specialisties/list",
      *  summary="Carrega especialidades",
      *
      *     @OA\Response(
@@ -24,9 +24,9 @@ class SpecialistsController extends Controller
      *
      * @return mixed
      */
-    public function getlist()
+    public function list()
     {
-        $specialists = app(GetSpecialists::class)->execute();
+        $specialists = app(Specialisties::class)->execute();
         return response()->json(array('specialists' => $specialists));
     }
 }

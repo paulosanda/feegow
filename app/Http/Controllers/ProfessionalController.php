@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Actions\GetProfessionals;
+use App\Http\Actions\Professionals;
 
 class ProfessionalController extends Controller
 {
@@ -32,9 +32,9 @@ class ProfessionalController extends Controller
      * @param  mixed $especialidade_id
      * @return mixed
      */
-    public function getlist($especialidade_id)
+    public function list($especialidade_id)
     {
-        $professionals = app(GetProfessionals::class)->execute($especialidade_id);
+        $professionals = app(Professionals::class)->execute($especialidade_id);
         return response()->json(array('specialists' => $professionals));
     }
 }

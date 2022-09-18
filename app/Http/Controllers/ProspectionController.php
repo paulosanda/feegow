@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Prospection;
+use App\Http\Actions\Prospections;
 
 class ProspectionController extends Controller
 {
@@ -43,28 +43,15 @@ class ProspectionController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'specialty_id' => 'required|integer',
-            'professional_id' => 'required|integer',
-            'name' => 'required|string',
-            'cpf' => 'required|string',
-            'source_id' => 'required|integer',
-            'birthdate' => 'required|string',
+        $prospect = app(Prospections::class)->execute([
+            'specialty_id' => $request->specialty_id,
+            'professional_id' => $request->professional_id,
+            'name' => $request->name,
+            'cpf' => $request->cpf,
+            'source_id' => $request->source_id,
+            'birthdate' => $request->birthdate
         ]);
 
-        $newProspect = new Prospection;
-        try {
-            $newProspect->create([
-                'specialty_id' => $request->specialty_id,
-                'professional_id' => $request->professional_id,
-                'name' => $request->name,
-                'cpf' => $request->cpf,
-                'source_id' => $request->source_id,
-                'birthdate' => $request->birthdate
-            ]);
-            return response()->json(['Cadastro realizado com sucesso', 200]);
-        } catch (\Illuminate\Database\QueryException $exception) {
-            return $exception->errorInfo;
-        }
+        return response()->json([$prospect]);
     }
 }
