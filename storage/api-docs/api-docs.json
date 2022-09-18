@@ -12,7 +12,7 @@
                 ],
                 "summary": "Carrega profissionais por especialidade",
                 "description": "Carrega profissionais por especialidade",
-                "operationId": "53c98dd999e277368dd62f4a961f1f97",
+                "operationId": "ad7d86dced4f32687430a71f833784ea",
                 "parameters": [
                     {
                         "name": "especialidade_id",
@@ -165,14 +165,14 @@
                 }
             }
         },
-        "/api/specialists/list": {
+        "/api/specialisties/list": {
             "get": {
                 "tags": [
                     "Especialidades"
                 ],
                 "summary": "Carrega especialidades",
                 "description": "Carrega especialidades",
-                "operationId": "d0aa83ddfe60e7f23f8f5a66ce459015",
+                "operationId": "4d7f76145c50d970efcac1dd71e3706a",
                 "responses": {
                     "200": {
                         "description": "OK"

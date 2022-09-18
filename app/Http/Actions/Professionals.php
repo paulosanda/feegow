@@ -4,7 +4,7 @@ namespace App\Http\Actions;
 
 use GuzzleHttp\Client;
 
-class GetProfessionals
+class Professionals extends BaseAction
 {
     private $uri;
     private $headers;
