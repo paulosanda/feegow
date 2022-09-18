@@ -47,4 +47,23 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    public function render($request, Throwable $e)
+    {
+        $message = $e->getMessage();
+        $errors = method_exists($e, 'errors') ? $e->errors() : [];
+        if (method_exists($e, 'getStatusCode')) {
+            $status_code = $e->getStatusCode();
+        } else {
+            $status_code = $e->status ?? array_search(get_class($e), $this->status);
+        }
+
+        if (!$status_code) {
+            $status_code = Response::HTTP_INTERNAL_SERVER_ERROR;
+        }
+
+        $data = array_filter(compact('message', 'errors')) ?: null;
+
+        return new JsonResponse($data, $status_code);
+    }
 }

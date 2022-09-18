@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Source;
+use App\Http\Actions\Sources;
 
 class SourceController extends Controller
 {
@@ -67,15 +68,10 @@ class SourceController extends Controller
      */
     public function store(Request $request)
     {
-        $newSource = new Source();
-        try {
-            $newSource->create([
-                'source' => $request->source,
-            ]);
-            return response()->json(['Source cadastrado com sucesso.'], 200);
-        } catch (\Illuminate\Database\QueryException $exception) {
+        $source = app(Sources::class)->execute([
+            "source" => $request->source
+        ]);
 
-            return $exception->errorInfo;
-        }
+        return response()->json([$source]);
     }
 }
