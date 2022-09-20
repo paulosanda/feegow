@@ -3,6 +3,7 @@
 namespace App\Http\Actions;
 
 use App\Models\Source;
+use Illuminate\Database\QueryException;
 
 class Sources extends BaseAction
 {
@@ -27,7 +28,7 @@ class Sources extends BaseAction
         try {
             $newSource->create($data);
             return response()->json(['Source cadastrado com sucesso.']);
-        } catch (\Illuminate\Database\QueryException $exception) {
+        } catch (QueryException $exception) {
 
             return $exception->errorInfo;
         }

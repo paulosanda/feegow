@@ -3,6 +3,7 @@
 namespace App\Http\Actions;
 
 use App\Models\Prospection;
+use Illuminate\Database\QueryException;
 
 class Prospections extends BaseAction
 {
@@ -32,7 +33,7 @@ class Prospections extends BaseAction
         try {
             $newProspect->create($data);
             return response()->json(['Prospect cadastrado com sucesso.']);
-        } catch (\Illuminate\Database\QueryException $exception) {
+        } catch (QueryException $exception) {
 
             return $exception->errorInfo;
         }
