@@ -31,7 +31,7 @@ class ProspectionController extends Controller
      *    response=200,
      *    description="Source cadastrado com sucesso",
      *    @OA\JsonContent(
-     *       @OA\Property(property="message", type="string", example="Source cadastrado com sucesso")
+     *       @OA\Property(property="message", type="string", example="Prospect cadastrado com sucesso")
      *        )
      *     )
      * )
