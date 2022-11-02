@@ -11,7 +11,7 @@ class ProspectionController extends Controller
      * @OA\Post(
      * path="/api/prospection/new",
      * summary="Cadastra prospect",
-     * description="Cadastra prospect  - IMPORTANTE tenha certeza que cadastrou ao menos uma cateoria de source",
+     * description="Cadastra prospect  - IMPORTANTE tenha certeza que cadastrou ao menos uma categoria de source",
      * operationId="Cadastra prospect",
      * tags={"Prospect"},
      * @OA\RequestBody(
@@ -52,6 +52,6 @@ class ProspectionController extends Controller
             'birthdate' => $request->birthdate
         ]);
 
-        return response()->json([$prospect]);
+        return response()->json([$prospect], 200);
     }
 }

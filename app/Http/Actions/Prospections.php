@@ -33,9 +33,10 @@ class Prospections extends BaseAction
         try {
             $newProspect->create($data);
             return response()->json(['Prospect cadastrado com sucesso.']);
-        } catch (QueryException $exception) {
+        } catch (QueryException $err) {
 
-            return $exception->errorInfo;
+            return response()->error(('Não foi possível realizar a inserção do novo source'), 500);
+            //return $err->getMessage();
         }
     }
 }

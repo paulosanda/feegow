@@ -35,7 +35,7 @@
                     "Prospect"
                 ],
                 "summary": "Cadastra prospect",
-                "description": "Cadastra prospect  - IMPORTANTE tenha certeza que cadastrou ao menos uma cateoria de source",
+                "description": "Cadastra prospect  - IMPORTANTE tenha certeza que cadastrou ao menos uma categoria de source",
                 "operationId": "Cadastra prospect",
                 "requestBody": {
                     "description": "Cadastra prospecrt",
@@ -91,7 +91,7 @@
                                     "properties": {
                                         "message": {
                                             "type": "string",
-                                            "example": "Source cadastrado com sucesso"
+                                            "example": "Prospect cadastrado com sucesso"
                                         }
                                     },
                                     "type": "object"
